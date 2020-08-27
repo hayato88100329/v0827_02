@@ -12,8 +12,8 @@ namespace v0827_02
 {
     public partial class Form1 : Form
     {
-        int vx = rand.Next(-10, 11);
-        int vy = rand.Next(-10, 11);
+        int vx = rand.Next(-10, 12);
+        int vy = rand.Next(-10, 12);
         int point = -100;
         static Random rand = new Random();
 
@@ -21,7 +21,7 @@ namespace v0827_02
         {
             InitializeComponent();
 
-            label1.Left = rand.Next(ClientSize.Width-label1.Width);
+            label1.Left = rand.Next(ClientSize.Width - label1.Width);
             label1.Top = rand.Next(ClientSize.Height-label1.Height);
         }
 
@@ -54,6 +54,11 @@ namespace v0827_02
             {
                 vy = -Math.Abs(vy);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
