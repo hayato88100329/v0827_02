@@ -12,8 +12,8 @@ namespace v0827_02
 {
     public partial class Form1 : Form
     {
-        int vx = rand.Next(-10, 12);
-        int vy = rand.Next(-10, 12);
+        int vx = rand.Next(-10, 11);
+        int vy = rand.Next(-10, 11);
         int point = -100;
         static Random rand = new Random();
 
@@ -23,6 +23,12 @@ namespace v0827_02
 
             label1.Left = rand.Next(ClientSize.Width - label1.Width);
             label1.Top = rand.Next(ClientSize.Height-label1.Height);
+
+            label4.Left = rand.Next(ClientSize.Width - label4.Width);
+            label4.Top = rand.Next(ClientSize.Height - label4.Height);
+
+            label5.Left = rand.Next(ClientSize.Width - label5.Width);
+            label5.Top = rand.Next(ClientSize.Height - label5.Height);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -51,6 +57,46 @@ namespace v0827_02
                 vx = -Math.Abs(vx);
             }
             if (label1.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vy);
+            }
+
+            label4.Left += vx;
+            label4.Top += vy;
+
+            if (label4.Left < 0)
+            {
+                vx = Math.Abs(vx);
+            }
+            if (label4.Top < 0)
+            {
+                vy = Math.Abs(vy);
+            }
+            if (label4.Right > ClientSize.Width)
+            {
+                vx = -Math.Abs(vx);
+            }
+            if (label4.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vy);
+            }
+
+            label5.Left += vx;
+            label5.Top += vy;
+
+            if (label5.Left < 0)
+            {
+                vx = Math.Abs(vx);
+            }
+            if (label5.Top < 0)
+            {
+                vy = Math.Abs(vy);
+            }
+            if (label5.Right > ClientSize.Width)
+            {
+                vx = -Math.Abs(vx);
+            }
+            if (label5.Bottom > ClientSize.Height)
             {
                 vy = -Math.Abs(vy);
             }
